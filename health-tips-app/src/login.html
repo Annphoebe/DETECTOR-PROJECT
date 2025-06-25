@@ -54,7 +54,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login" method="POST">
+        <form id="loginForm">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
 
@@ -67,9 +67,15 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
 
-            <!--button type="submit"><a href="successfullogin.html"></a> Login</button-->
-            <button class="login-btn" onclick="window.location.href='successfullogin.html'">Login</button>
+            <button type="submit">Login</button>
         </form>
     </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            // You can add your login validation or API call here if needed
+            window.location.href = 'successfullogin.html';
+        });
+    </script>
 </body>
 </html>
